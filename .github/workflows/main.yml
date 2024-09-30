@@ -24,6 +24,6 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: .
-        file: ./Dockerfile
+        file: ./Dockerfile  # Asegúrate de que esta ruta sea correcta
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/nest-demo:latest
