@@ -17,15 +17,18 @@ jobs:
       name: List files in root directory
       run: ls -la
     -
+      name: List files in back/ecommerce-m-2018 directory
+      run: ls -la back/ecommerce-m-2018
+    -
       name: Check Dockerfile existence
       run: |
-        if [ -f Dockerfile ]; then
+        if [ -f back/ecommerce-m-2018/Dockerfile ]; then
           echo "Dockerfile exists"
-          cat Dockerfile
+          cat back/ecommerce-m-2018/Dockerfile
         else
           echo "Dockerfile does not exist"
-          echo "Contents of current directory:"
-          ls -la
+          echo "Contents of back/ecommerce-m-2018 directory:"
+          ls -la back/ecommerce-m-2018
         fi
     -
       name: Login To Docker Hub
@@ -40,7 +43,7 @@ jobs:
       name: Build and push
       uses: docker/build-push-action@v5
       with:
-        context: .
-        file: ./Dockerfile
+        context: ./back/ecommerce-m-2018
+        file: ./back/ecommerce-m-2018/Dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/nest-demo:latest
