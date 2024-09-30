@@ -14,8 +14,19 @@ jobs:
       name: Print working directory
       run: pwd
     -
-      name: List files
+      name: List files in root directory
       run: ls -la
+    -
+      name: Check Dockerfile existence
+      run: |
+        if [ -f Dockerfile ]; then
+          echo "Dockerfile exists"
+          cat Dockerfile
+        else
+          echo "Dockerfile does not exist"
+          echo "Contents of current directory:"
+          ls -la
+        fi
     -
       name: Login To Docker Hub
       uses: docker/login-action@v3
