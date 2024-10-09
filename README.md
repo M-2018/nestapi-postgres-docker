@@ -1,0 +1,1 @@
+A basic e-commerce API developed using NestJS, TypeORM, and PostgreSQL, configured to run with Docker. This project involves creating a robust backend that handles various e-commerce functionalities, such as product management, user authentication, and order processing, all while ensuring seamless integration with Docker for efficient deployment and scalability.
